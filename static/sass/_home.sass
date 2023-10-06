@@ -1,0 +1,109 @@
+@import "vars"
+.banner
+  &__content
+    display: flex
+    align-items: center
+    height: 758px
+    background-image: url("../img/banner.jpg")
+    background-size: cover
+    border-radius: 70px
+    padding-left: 52px
+
+  &__text-block
+    display: flex
+    flex-direction: column
+    gap: 18px
+    width: 434px
+
+  &__title
+    font-size: 3.25rem
+
+  &__subtitle
+    font-size: 1.1rem
+
+  &__button
+    font-size: 0.9rem
+    display: flex
+    width: fit-content
+    align-items: center
+    gap: 10px
+    border-radius: 18px
+    background-color: $mainColor
+    color: $backgroundColor
+    padding: 26px 48px
+    margin-top: 4px
+
+.block-subtitle
+  font-size: 1.1rem
+  width: 737px
+  text-align: center
+  margin: 8px auto 0
+
+.projects
+  margin-top: 96px
+  &__content
+    margin-top: 94px
+    display: flex
+    gap: 56px 104px
+    flex-wrap: wrap
+
+.project-item
+  overflow: hidden
+
+  &:nth-child(1) .project-item__img
+    border-radius: 0 80px 0 0
+
+  &:nth-child(2) .project-item__img
+    border-radius: 80px 0 0 0
+
+  &:nth-last-child(-n+2) .project-item__img
+    border-radius: 0 0 80px 0
+
+  &:last-child .project-item__img
+    border-radius: 0 0 0 80px
+
+  &__footer
+    display: flex
+    justify-content: space-between
+    margin-top: 24px
+
+  &__title
+    font-size: 1.25rem
+
+  &__tags
+    &-item
+      display: inline
+
+      &:not(:last-child)::after
+        content: "/"
+        padding-left: 8px
+        padding-right: 8px
+
+  &__link
+    & svg
+      fill: $additionalBackgroundColor
+      stroke: $mainColor
+
+.indicators
+  display: flex
+  background-color: $additionalBackgroundColor
+  padding-top: 152px
+  padding-bottom: 152px
+  margin: 96px auto
+
+  &__item
+    flex-basis: 25%
+
+    &:not(:last-child)
+      border-right: solid 1px $indicatorsColor
+
+  &__value
+    font-size: 4.25rem
+    text-align: center
+    color: $indicatorsColor
+
+  &__text
+    font-size: 1.1rem
+    text-align: center
+
+

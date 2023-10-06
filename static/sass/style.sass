@@ -1,0 +1,118 @@
+@import "vars"
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+
+a
+  text-decoration: none
+  color: $mainColor
+
+html
+  font-family: $textFontFamily
+  font-size: $mainFontSize
+  font-style: normal
+  font-weight: $fontWeightNormal
+  line-height: normal
+
+h1, h2, h3, h4
+  font-family: $titleFontFamily
+  font-weight: $fontWeightNormal
+
+details
+  cursor: pointer
+
+
+summary, ul
+  list-style: none
+
+button
+  border: none
+
+.block-title
+  font-size: 2.5rem
+  text-align: center
+  margin: 0 auto 0
+
+.center
+  padding-left: calc(50% - $contentWidthDesktop / 2)
+  padding-right: calc(50% - $contentWidthDesktop / 2)
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 44px
+  padding-bottom: 57px
+
+.logo
+  display: flex
+  align-items: center
+  gap: 10px
+
+  &__text
+    font-family: $titleFontFamily
+    font-size: 2rem
+
+.main-menu
+  display: flex
+  gap: 50px
+
+  &__link
+    color: $mainColor
+
+.footer
+  display: flex
+  justify-content: space-between
+  margin-top: 96px
+  padding-bottom: 168px
+
+  &__block
+    flex-basis: 100%
+
+    &_nav
+      margin-left: 101px
+
+      & .footer__block-title
+        margin-bottom: 8px
+
+    &-title
+      font-size: 1.25rem
+      margin-bottom: 26px
+
+  &__nav-link
+    display: block
+    padding: 18px 0
+
+  &__contact-link
+    display: block
+    margin-bottom: 18px
+
+    &_address
+      width: 258px
+
+  &__text
+    font-size: 1.1rem
+    margin-top: 18px
+    margin-bottom: 32px
+
+    width: 393px
+
+  &__social
+    display: flex
+    gap: 54px
+
+.breadcrumb
+  &__list
+    list-style: none
+    display: flex
+  &__item
+    &:not(:last-child)::after
+      content: "/"
+      padding-left: 8px
+      padding-right: 8px
+
+@import "home"
+@import "blog"

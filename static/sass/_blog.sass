@@ -1,0 +1,111 @@
+@import "vars"
+
+.blog
+  &__banner
+    display: flex
+    justify-content: center
+    align-items: end
+    background-image: url("../img/article_banner.jpg")
+    background-size: cover
+    height: 356px
+
+  &__banner-content
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 41px 76px
+    width: fit-content
+    background: $backgroundColor
+    border-radius: 37px 37px 0 0
+
+  &__articles
+    margin-top: 200px
+    margin-bottom: 200px
+
+.articles
+  &__content
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 27px
+    flex-wrap: wrap
+    margin-top: 52px
+
+  &__block-title
+    text-align: left
+    margin-bottom: 30px
+  &__pagination
+    display: flex
+    justify-content: center
+    gap: 20px
+    margin-top: 51px
+  &__pagination-link
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 52px
+    height: 52px
+    border-radius: 26px
+    border: 1px solid $indicatorsColor
+    &_active
+      border-color: transparent
+      background-color: $additionalBackgroundColor
+
+
+.article
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  border-radius: 62px
+  border: 1px solid $articleBorderColor
+  box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.25)
+  padding: 21px 21px 47px
+
+  &_latest
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: repeat(2,auto)
+    padding: 22px 76px 22px 22px
+    margin-bottom: 172px
+    gap: 65px
+
+    & .article__content
+      grid-column: 2 / 3
+    & .article__img
+      border-radius: 45px
+    & .article__img-wrap
+      border-radius: 64px
+      grid-row: 1 / 3
+
+
+  &_accent
+    background: $additionalBackgroundColor
+
+    & .article__link-img
+      fill: $backgroundColor
+
+
+  &__img-wrap
+    position: relative
+
+  &__img
+    border-radius: 45px 45px 0 0
+
+  &__tag
+    font-size: 0.8rem
+    position: absolute
+    left: 20px
+    bottom: 20px
+    background-color: $backgroundColor
+    border-radius: 8px 8px 8px 0
+    padding: 8px 12px
+
+  &__title
+    font-family: $titleFontFamily
+    font-size: 1.25rem
+    margin: 21px 35px 30px 0
+
+  &__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
