@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1</title>
+</head>
+<body>
+<style>
+    .rotate-text {
+        transition: all 0.4s;
+    }
+
+    .rotate .rotate-text {
+        transform: scaleX(-1);
+    }
+
+</style>
+<h1>Часть 2. Задание по Vue</h1>
+<div style="width: 600px; margin: 32px auto" id="app">
+    <p>
+        Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products,
+        где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и
+        предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию).
+    </p>
+    <span>Сортировка: </span>
+    <button @click="productSort()">по возростанию цены</button>
+    <button @click="productSort(true)">по убыванию цены</button>
+    <ul>
+        <li
+                v-for="(product, index) in products"
+                :key="index"
+                :content="product"
+        >
+            <div>Товар: {{ product.name }}</div>
+            <div>Цена: {{ product.price }}</div>
+            <button @click="deleteItem(index)">удалить</button>
+            <hr>
+
+        </li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const App = {
+        el: '#app',
+        data() {
+            return {
+                products: [
+                    {
+                        name: 'Iphone 10',
+                        price: 1000,
+                    },
+                    {
+                        name: 'Redmi 10 pro',
+                        price: 600,
+                    },
+                    {
+                        name: 'Samsung galaxy',
+                        price: 800,
+                    },
+                ]
+            }
+        },
+        methods: {
+            deleteItem(index) {
+                this.products.splice(index, 1)
+            },
+            productSort(highToLow = false) {
+                if (highToLow) {
+                    this.products.sort((a, b) => b.price - a.price);
+                } else {
+                    this.products.sort((a, b) => a.price - b.price);
+                }
+            }
+        }
+    };
+
+    Vue.createApp(App).mount('#app');
+</script>
+</body>
+</html>
