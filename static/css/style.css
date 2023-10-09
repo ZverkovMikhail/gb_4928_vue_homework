@@ -346,4 +346,114 @@ button {
   align-items: center;
 }
 
+.blog-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+}
+.blog-details__banner {
+  background-image: url("../img/blog_details_banner.jpg");
+  background-size: cover;
+  height: 356px;
+  margin-bottom: 200px;
+}
+.blog-details__tag {
+  position: sticky;
+  top: 0;
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: 56px;
+}
+.blog-details__tag-title {
+  font-size: 1.25rem;
+}
+.blog-details__tag-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.blog-details__tag-button {
+  padding: 9px 30px;
+  background-color: #F4F0EC;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.blog-details__tag-button_active {
+  background-color: #292F36;
+  color: #F4F0EC;
+}
+.blog-details-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+.blog-details__title {
+  text-align: left;
+}
+.blog-details__img {
+  display: block;
+  width: 100%;
+  border-radius: 50px;
+  margin: 44px 0 35px;
+}
+.blog-details__img_title {
+  margin-top: 11px;
+}
+.blog-details__img-footer {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 46px;
+}
+.blog-details__text-block {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.blog-details__text {
+  font-size: 1.1rem;
+}
+.blog-details__quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 53px 106px;
+  margin: 40px 0 27px;
+  border-radius: 50px;
+  background-color: #F4F0EC;
+}
+.blog-details__quote-text {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.25rem;
+  color: #CDA274;
+  margin: 0 auto;
+  text-align: center;
+}
+.blog-details__text-list {
+  list-style-type: none;
+  counter-reset: my-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 1.1rem;
+}
+.blog-details__text-list-item {
+  display: flex;
+}
+.blog-details__text-list-item::before {
+  font-size: 1rem;
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  color: #CDA274;
+  margin-right: 12px;
+}
+.blog-details__articles {
+  margin-top: 92px;
+  grid-column: 1/3;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
 /*# sourceMappingURL=style.css.map */
