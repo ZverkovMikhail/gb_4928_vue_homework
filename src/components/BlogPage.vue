@@ -5,7 +5,7 @@
         <h1 class="block-title">Articles & News</h1>
         <nav class="breadcrumb">
           <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Home</a></li>
+            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
             <li class="breadcrumb__item">Blog</li>
           </ul>
         </nav>
@@ -39,7 +39,7 @@
     <h2 class="block-title articles__block-title">Articles & News</h2>
 
     <div class="articles__content" id="articles">
-           <blog-article
+      <blog-article
           v-for="article in articlesForBlog"
           :article="article"
           :key="article.id"
@@ -62,6 +62,7 @@
 
 <script>
 import BlogArticle from "@/components/BlogArticle";
+
 export default {
   name: 'blog-page',
   props: ['articles'],
