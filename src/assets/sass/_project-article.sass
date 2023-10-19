@@ -1,0 +1,22 @@
+@import "vars"
+.project-article
+  width: 584px
+  display: grid
+  grid-template-rows: 1fr auto
+  margin-bottom: 10px
+  break-inside: avoid
+  &__img
+    display: block
+    grid-row: 1 / -1
+    grid-column: 1
+    max-width: 100%
+  &__footer
+    display: flex
+    justify-content: space-between
+  &__title
+    text-align: left
+  &__breadcrumb
+  &__link
+    display: flex
+    align-items: center
+

@@ -1,0 +1,25 @@
+@import "vars"
+.project
+  &__content
+    columns: 2
+    column-gap: 30px
+    margin-top: 62px
+  &__tag-content
+    display: flex
+    justify-content: center
+    width: fit-content
+    margin: 200px auto 62px
+    border: 1px solid $indicatorsColor
+    border-radius: 18px
+  &__tag-button
+    font-family: $textFontFamily
+    font-weight: 600
+    font-size: 0.8rem
+    padding: 26px 66px
+    border-radius: 18px
+    background-color: transparent
+    &_active
+      color: $additionalBackgroundColor
+      background-color: $indicatorsColor
+      transition: all 0.5s ease
+

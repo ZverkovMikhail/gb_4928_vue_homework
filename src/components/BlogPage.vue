@@ -1,16 +1,6 @@
 <template>
   <div class="blog">
-    <div class="blog__banner">
-      <div class="blog__banner-content">
-        <h1 class="block-title">Articles & News</h1>
-        <nav class="breadcrumb">
-          <ul class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
-            <li class="breadcrumb__item">Blog</li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <page-banner :backgroundUrl="bannerImageUrl" :title="bannerTitle" :breadcrumbs="breadcrumbs"/>
   </div>
   <section class="articles blog__articles center" id="blog">
     <h2 class="block-title articles__block-title">Latest Post</h2>
@@ -46,29 +36,42 @@
       >
       </blog-article>
     </div>
-    <div class="articles__pagination">
-      <a class="articles__pagination-link articles__pagination-link_active" href="#">01</a>
-      <a class="articles__pagination-link" href="#">02</a>
-      <a class="articles__pagination-link" href="#">03</a>
-      <a class="articles__pagination-link" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
-          <path d="M1.55714 15L7.5 8.31429L1.55714 1.62857" stroke="#292F36" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
+    <pagination-component :page-number="7" :showed-num-buttons="3" @changePageNum="changePageNum"/>
   </section>
 </template>
 
 <script>
 import BlogArticle from "@/components/BlogArticle";
+import PageBanner from "@/components/PageBanner";
+import PaginationComponent from "@/components/PaginationComponent";
 
 export default {
   name: 'blog-page',
   props: ['articles'],
-  components: {BlogArticle},
+  components: {PageBanner, BlogArticle, PaginationComponent},
   defineProps: {
     articles: [],
+  },
+  data() {
+    return {
+      bannerTitle: "Articles & News",
+      bannerImageUrl: require("@/assets/img/article_banner.jpg"),
+      breadcrumbs: [
+        {
+          name: 'Home',
+          url: '#',
+        },
+        {
+          name: 'Blog',
+          url: null,
+        },
+      ]
+    }
+  },
+  methods:{
+    changePageNum(num){
+      console.log('changePageNum = ', num)
+    }
   },
   computed: {
     articlesForBlog() {

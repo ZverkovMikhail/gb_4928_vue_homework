@@ -1,25 +1,6 @@
 @import "vars"
-
 .blog
-  &__banner
-    display: flex
-    justify-content: center
-    align-items: end
-    background-image: url("../img/article_banner.jpg")
-    background-size: cover
-    height: 356px
-
-  &__banner-content
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    padding: 41px 76px
-    width: fit-content
-    background: $backgroundColor
-    border-radius: 37px 37px 0 0
-
-  &__articles
+   &__articles
     margin-top: 200px
     margin-bottom: 200px
 
@@ -34,22 +15,6 @@
   &__block-title
     text-align: left
     margin-bottom: 30px
-  &__pagination
-    display: flex
-    justify-content: center
-    gap: 20px
-    margin-top: 51px
-  &__pagination-link
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 52px
-    height: 52px
-    border-radius: 26px
-    border: 1px solid $indicatorsColor
-    &_active
-      border-color: transparent
-      background-color: $additionalBackgroundColor
 
 
 .article
