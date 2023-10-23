@@ -77,12 +77,11 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   name: 'blog-details-page',
-  props: ['articles'],
-  defineProps: {
-    articles: [],
-  }, data() {
+  data() {
     return {
       tags: [
         {id: 0, text: 'Kitchen'},
@@ -101,8 +100,10 @@ export default {
     },
   },
   computed: {
+    ...mapGetters(['getArticlesDetails']),
     currentArticle() {
-      return this.articles.find((art) => art.tag === this.tagActive)
+      console.log('this.getArticles = ', this.getArticlesDetails)
+      return this.getArticlesDetails.find((art) => art.tag === this.tagActive)
     }
   }
 }

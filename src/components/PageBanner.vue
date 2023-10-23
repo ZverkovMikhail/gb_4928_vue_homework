@@ -1,6 +1,6 @@
 <template>
     <div class="page__banner banner-background" :style="{ backgroundImage: `url(${backgroundUrl})` }">
-      <div class="page__banner-content">
+      <div v-if="title || breadcrumbs" class="page__banner-content">
         <h1 class="block-title">{{ title }}</h1>
         <nav class="breadcrumb">
           <ul class="breadcrumb__list">

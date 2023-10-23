@@ -2,13 +2,13 @@
   <div class="project center">
     <page-banner :backgroundUrl="bannerImageUrl" :title="bannerTitle" :breadcrumbs="breadcrumbs"/>
     <div class="project__tag-content">
-        <button v-for="tag in tags"
-                :key="tag.id"
-                v-bind:class="(tag.id === tagActive)?'project__tag-button_active':''"
-                @click="clickOnTag(tag.id)"
-                class="project__tag-button">{{ tag.text }}
-        </button>
-      </div>
+      <button v-for="tag in tags"
+              :key="tag.id"
+              v-bind:class="(tag.id === tagActive)?'project__tag-button_active':''"
+              @click="clickOnTag(tag.id)"
+              class="project__tag-button">{{ tag.text }}
+      </button>
+    </div>
     <div class="project__content">
       <project-article
           v-for="project in projectsByTag"
@@ -25,11 +25,11 @@
 import ProjectArticle from "@/components/ProjectArticle";
 import PageBanner from "@/components/PageBanner";
 import PaginationComponent from "@/components/PaginationComponent";
+import {mapGetters} from "vuex";
 
 export default {
   name: 'project-page',
   props: {
-    projectList: []
   },
   components: {PageBanner, ProjectArticle, PaginationComponent},
   data() {
@@ -64,9 +64,10 @@ export default {
     },
 
   },
-  computed:{
-       projectsByTag(){
-      return this.projectList.filter((project) => project.tags.includes(this.tagActive));
+  computed: {
+    ...mapGetters(['getProjects']),
+    projectsByTag() {
+      return this.getProjects.filter((project) => project.tags.includes(this.tagActive));
     }
   }
 }

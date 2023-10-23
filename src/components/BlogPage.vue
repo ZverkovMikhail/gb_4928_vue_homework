@@ -6,16 +6,16 @@
     <h2 class="block-title articles__block-title">Latest Post</h2>
     <article class="article article_latest">
       <div class="article__img-wrap">
-        <img class="article__img" :src="lastArticle.img.src" :alt="lastArticle.img.alt">
-        <a class="article__tag" :href="lastArticle.tag.href">{{ lastArticle.tag.text }}</a>
+        <img class="article__img" :src="getLastArticle.img.src" :alt="getLastArticle.img.alt">
+        <a class="article__tag" :href="getLastArticle.tag.href">{{ getLastArticle.tag.text }}</a>
       </div>
       <div class="article__content">
-        <p class="article__title">{{ lastArticle.title }}</p>
-        <p class="article__text" v-html="lastArticle.shortText"></p>
+        <p class="article__title">{{ getLastArticle.title }}</p>
+        <p class="article__text" v-html="getLastArticle.shortText"></p>
       </div>
       <div class="article__footer">
-        <p class="article__date">{{ lastArticle.date }}</p>
-        <a class="article__link" :href="lastArticle.href">
+        <p class="article__date">{{ getLastArticle.date }}</p>
+        <a class="article__link" :href="getLastArticle.href">
           <svg class="article__link-img" xmlns="http://www.w3.org/2000/svg" width="52" height="53"
                viewBox="0 0 52 53" fill="#F4F0EC" stroke="#292F36">
             <circle cx="26" cy="26.267" r="26" stroke="none"/>
@@ -30,7 +30,7 @@
 
     <div class="articles__content" id="articles">
       <blog-article
-          v-for="article in articlesForBlog"
+          v-for="article in getArticlesForBlog"
           :article="article"
           :key="article.id"
       >
@@ -44,6 +44,7 @@
 import BlogArticle from "@/components/BlogArticle";
 import PageBanner from "@/components/PageBanner";
 import PaginationComponent from "@/components/PaginationComponent";
+import {mapGetters} from "vuex";
 
 export default {
   name: 'blog-page',
@@ -74,11 +75,7 @@ export default {
     }
   },
   computed: {
-    articlesForBlog() {
-      return this.articles.slice(0, this.articles.length - 1);
-    }, lastArticle() {
-      return this.articles[this.articles.length - 1];
-    }
+...mapGetters(['getArticlesForBlog', 'getLastArticle'])
   },
 }
 </script>

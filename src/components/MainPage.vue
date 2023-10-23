@@ -16,7 +16,8 @@
       </div>
     </div>
   </div>
-  <section class="projects center" id="project">
+  <div class="main-page center">
+    <section class="projects" id="project">
     <h2 class="block-title">Follow Our Projects</h2>
     <p class="block-subtitle">
       It is a long established fact that a reader will be distracted by the of
@@ -105,7 +106,7 @@
       </div>
     </div>
   </section>
-  <div class="indicators center">
+  <div class="indicators">
     <div class="indicators__item">
       <div class="indicators__value">12</div>
       <div class="indicators__text">Years Of Experiance</div>
@@ -123,7 +124,7 @@
       <div class="indicators__text">Happy Customers</div>
     </div>
   </div>
-  <section class="articles center" id="blog">
+  <section class="articles" id="blog">
     <h2 class="block-title">Articles & News</h2>
     <p class="block-subtitle">
       It is a long established fact that a reader will be distracted by the of
@@ -131,28 +132,27 @@
     </p>
     <div class="articles__content">
       <blog-article
-          v-for="article in articlesForMain"
+          v-for="article in getArticlesForMain"
           :article="article"
           :key="article.id"
       >
       </blog-article>
     </div>
   </section>
+  </div>
 </template>
 
 <script>
 import BlogArticle from "@/components/BlogArticle";
+import {mapGetters} from "vuex";
 export default {
   name: 'main-page',
   components: {BlogArticle},
-  props: ['articles'],
   defineProps: {
     articles: [],
   },
   computed: {
-        articlesForMain() {
-            return this.articles.slice(0, 3);
-        },
+    ...mapGetters(['getArticlesForMain']),
     },
 }
 </script>
