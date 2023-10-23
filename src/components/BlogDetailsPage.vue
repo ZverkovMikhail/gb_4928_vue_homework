@@ -4,9 +4,9 @@
     <div class="blog-details__tag">
       <h3 class="blog-details__tag-title">Tags</h3>
       <div class="blog-details__tag-content">
-        <button v-for="tag in tags"
+        <button v-for="tag in articlesTags"
                 :key="tag.id"
-                v-bind:class="(tag.id === tagActive)?'blog-details__tag-button_active':''"
+                v-bind:class="(tag.id === articlesTagActive)?'blog-details__tag-button_active':''"
                 @click="clickOnTag(tag.id)"
                 class="blog-details__tag-button">{{ tag.text }}
         </button>
@@ -77,34 +77,23 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations, mapState} from "vuex";
 
 export default {
   name: 'blog-details-page',
   data() {
     return {
-      tags: [
-        {id: 0, text: 'Kitchen'},
-        {id: 1, text: 'Bedroom'},
-        {id: 2, text: 'Building'},
-        {id: 3, text: 'Architecture'},
-        {id: 4, text: 'Kitchen Planning'},
-        {id: 5, text: 'Bedroom'},
-      ],
-      tagActive: 0,
     }
   },
   methods: {
+    ...mapMutations(['ARTICLE_TAG_ACTIVE']),
     clickOnTag(id) {
-      this.tagActive = id;
+      this.ARTICLE_TAG_ACTIVE(id);
     },
   },
   computed: {
-    ...mapGetters(['getArticlesDetails']),
-    currentArticle() {
-      console.log('this.getArticles = ', this.getArticlesDetails)
-      return this.getArticlesDetails.find((art) => art.tag === this.tagActive)
-    }
+    ...mapState(['articlesDetails', 'articlesTags', "articlesTagActive"]),
+    ...mapGetters(['currentArticle']),
   }
 }
 </script>

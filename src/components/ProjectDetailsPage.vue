@@ -3,15 +3,15 @@
     <page-banner :background-url="bannerImageUrl"/>
     <div class="project-details__content center">
       <div class="project-details__text-block">
-        <h1 class="project-details__title">{{ getProjectDetails.title }}</h1>
-        <p v-for="paragraph in getProjectDetails .paragraphs"
+        <h1 class="project-details__title">{{ projectDetails.title }}</h1>
+        <p v-for="paragraph in projectDetails.paragraphs"
            :key="paragraph.id"
            class="project-details__paragraph">
           {{ paragraph }}
         </p>
 
       </div>
-      <slider-component :images="getProjectDetails.images"/>
+      <slider-component :images="projectDetails.images"/>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
 <script>
 import PageBanner from "@/components/PageBanner";
 import SliderComponent from "@/components/SliderComponent";
-import {mapGetters} from "vuex";
+import {mapState} from "vuex";
 
 export default {
   name: "ProjectDetailsPage",
@@ -38,7 +38,7 @@ export default {
   methods: {
   },
   computed: {
-    ...mapGetters(['getProjectDetails']),
+    ...mapState(['projectDetails']),
   },
 }
 </script>

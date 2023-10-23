@@ -2,9 +2,9 @@
   <div class="project center">
     <page-banner :backgroundUrl="bannerImageUrl" :title="bannerTitle" :breadcrumbs="breadcrumbs"/>
     <div class="project__tag-content">
-      <button v-for="tag in tags"
+      <button v-for="tag in projectTags"
               :key="tag.id"
-              v-bind:class="(tag.id === tagActive)?'project__tag-button_active':''"
+              v-bind:class="(tag.id === projectTagActive)?'project__tag-button_active':''"
               @click="clickOnTag(tag.id)"
               class="project__tag-button">{{ tag.text }}
       </button>
@@ -25,7 +25,7 @@
 import ProjectArticle from "@/components/ProjectArticle";
 import PageBanner from "@/components/PageBanner";
 import PaginationComponent from "@/components/PaginationComponent";
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations, mapState} from "vuex";
 
 export default {
   name: 'project-page',
@@ -46,29 +46,23 @@ export default {
           url: null,
         },
       ],
-      tags: [
-        {id: 0, text: 'Bathroom'},
-        {id: 1, text: 'Bed Room'},
-        {id: 2, text: 'Kitchan'},
-        {id: 3, text: 'Living Area'},
-      ],
-      tagActive: 0,
+
     }
   },
   methods: {
+    ...mapMutations(['PROJECT_TAG_ACTIVE']),
     changePageNum(num) {
       console.log('changePageNum = ', num)
     },
     clickOnTag(id) {
-      this.tagActive = id;
+      this.PROJECT_TAG_ACTIVE(id);
     },
 
   },
   computed: {
-    ...mapGetters(['getProjects']),
-    projectsByTag() {
-      return this.getProjects.filter((project) => project.tags.includes(this.tagActive));
-    }
+    ...mapState(['projects','projectTags', 'projectTagActive']),
+    ...mapGetters(['projectsByTag'])
+
   }
 }
 </script>

@@ -533,19 +533,33 @@ export default createStore({
                     alt: 'photo-3'
                 },
             ]
-        }
+        },
+        projectTags: [
+            {id: 0, text: 'Bathroom'},
+            {id: 1, text: 'Bed Room'},
+            {id: 2, text: 'Kitchan'},
+            {id: 3, text: 'Living Area'},
+        ],
+        projectTagActive: 0,
+        articlesTags: [
+            {id: 0, text: 'Kitchen'},
+            {id: 1, text: 'Bedroom'},
+            {id: 2, text: 'Building'},
+            {id: 3, text: 'Architecture'},
+            {id: 4, text: 'Kitchen Planning'},
+            {id: 5, text: 'Bedroom'},
+        ],
+        articlesTagActive: 0,
     },
-    mutations: {},
+    mutations: {
+        PROJECT_TAG_ACTIVE(state, id) {
+            state.projectTagActive = id;
+        },
+        ARTICLE_TAG_ACTIVE(state, id) {
+            state.articlesTagActive = id;
+        },
+    },
     getters: {
-        getProjectDetails(state) {
-            return state.projectDetails
-        },
-        getProjects(state) {
-            return state.projects
-        },
-        getArticles(state) {
-            return state.articles
-        },
         getArticlesForMain(state) {
             return state.articles.slice(0, 3);
         },
@@ -555,9 +569,12 @@ export default createStore({
         getLastArticle(state) {
             return state.articles[state.articles.length - 1];
         },
-        getArticlesDetails(state) {
-            return state.articlesDetails
+        projectsByTag(state) {
+            return state.projects.filter((project) => project.tags.includes(state.projectTagActive));
         },
+        currentArticle(state) {
+            return state.articlesDetails.find((art) => art.tag === state.articlesTagActive)
+        }
     },
     actions: {},
 
