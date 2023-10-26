@@ -7,6 +7,7 @@ export default createStore({
     state: {
         articles: [
             {
+                id: 0,
                 isAccent: false,
                 tag: {
                     text: 'Kitchan Design', href: '#'
@@ -20,6 +21,7 @@ export default createStore({
                 shortText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.'
             },
             {
+                id: 1,
                 isAccent: true,
                 tag: {
                     text: 'Living Design', href: '#'
@@ -31,7 +33,9 @@ export default createStore({
                     src: require('@/assets/img/article_2.jpg'), alt: 'article2'
                 },
                 shortText: ''
-            }, {
+            },
+            {
+                id: 2,
                 isAccent: false,
                 tag: {
                     text: 'Interior Design', href: '#'
@@ -43,7 +47,9 @@ export default createStore({
                     src: require('@/assets/img/article_3.jpg'), alt: 'article3'
                 },
                 shortText: 'Lorem Ipsum is not simply random text. It has roots in a piece of classica.Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
-            }, {
+            },
+            {
+                id: 3,
                 isAccent: false,
                 tag: {
                     text: 'Kitchan Design', href: '#'
@@ -55,7 +61,9 @@ export default createStore({
                     src: require('@/assets/img/article_4.jpg'), alt: 'article4'
                 },
                 shortText: ''
-            }, {
+            },
+            {
+                id: 4,
                 isAccent: false,
                 tag: {
                     text: 'Living Design', href: '#'
@@ -67,13 +75,17 @@ export default createStore({
                     src: require('@/assets/img/article_5.jpg'), alt: 'article5'
                 },
                 shortText: ''
-            }, {
+            },
+            {
+                id: 5,
                 isAccent: false, tag: {
                     text: 'Interior Design', href: '#'
                 }, title: 'Best For Any Office & Business Interior Solution', date: '25 December,2022', href: '', img: {
                     src: require('@/assets/img/article_6.jpg'), alt: 'article6'
                 }, shortText: ''
-            }, {
+            },
+            {
+                id: 6,
                 isAccent: false,
                 tag: {
                     text: 'Interior Design', href: '#'
@@ -399,6 +411,7 @@ export default createStore({
         ],
         projects: [
             {
+                id: 0,
                 img: {
                     src: require('@/assets/img/project/project1.jpg'), alt: 'project1'
                 },
@@ -412,6 +425,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 1,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -425,6 +439,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 2,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -438,6 +453,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 3,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -451,6 +467,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 4,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -464,6 +481,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 5,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -477,6 +495,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 6,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -490,6 +509,7 @@ export default createStore({
                 Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo. In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor.'
             },
             {
+                id: 7,
                 breadcrumbs: [
                     {text: 'Decor', href: '#'},
                     {text: 'Artchitecture', href: '#'}
@@ -540,7 +560,7 @@ export default createStore({
             {id: 2, text: 'Kitchan'},
             {id: 3, text: 'Living Area'},
         ],
-        projectTagActive: 0,
+        // projectTagActive: 0,
         articlesTags: [
             {id: 0, text: 'Kitchen'},
             {id: 1, text: 'Bedroom'},
@@ -569,9 +589,9 @@ export default createStore({
         getLastArticle(state) {
             return state.articles[state.articles.length - 1];
         },
-        projectsByTag(state) {
-            return state.projects.filter((project) => project.tags.includes(state.projectTagActive));
-        },
+        // projectsByTag(state) {
+        //     return state.projects.filter((project) => project.tags.includes(state.projectTagActive));
+        // },
         currentArticle(state) {
             return state.articlesDetails.find((art) => art.tag === state.articlesTagActive)
         }

@@ -10,9 +10,9 @@
     </div>
 
     <nav class="main-menu">
-      <a class="main-menu__link" href="#">Home</a>
-      <a class="main-menu__link" href="#">Project</a>
-      <a class="main-menu__link" href="#">Blog</a>
+      <router-link class="main-menu__link" to="/">Home</router-link>
+      <router-link class="main-menu__link" to="/project">Project</router-link>
+      <router-link class="main-menu__link" to="/blog">Blog</router-link>
     </nav>
   </header>
 </template>

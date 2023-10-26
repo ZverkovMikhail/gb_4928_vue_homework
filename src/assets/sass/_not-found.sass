@@ -1,0 +1,38 @@
+@import "vars"
+.not-found
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 80px
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: start
+  &__title
+    font-family: $titleFontFamily
+    font-size: 250px
+    color: $indicatorsColor
+    line-height: 70%
+    max-height: 172px
+
+  &__text
+    font-family: $titleFontFamily
+    font-size: 35px
+    margin-top: 15px
+    margin-bottom: 23px
+    max-width: 569px
+    text-align: start
+
+  &__button
+    display: flex
+    align-items: center
+    gap: 10px
+    background-color: $mainColor
+    color: $backgroundColor
+    padding: 26px 54px
+    border-radius: 18px
+  &__img-wrap
+    max-width: 913px
+    max-height: 90vh
+    overflow: hidden
+    border-radius: 0 0 0 353px

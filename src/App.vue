@@ -13,11 +13,15 @@
     <title>Blog</title>
   </head>
   <header-component/>
-  <main-page/>
-  <blog-page/>
-  <blog-details-page/>
-  <project-page/>
-  <project-details-page/>
+  <Transition name="fade">
+  <router-view>
+  </router-view>
+</Transition>
+<!--  <main-page/>-->
+<!--  <blog-page/>-->
+<!--  <blog-details-page/>-->
+<!--  <project-page/>-->
+<!--  <project-details-page/>-->
   <footer-component/>
   </body>
   </html>
@@ -25,11 +29,11 @@
 <script>
 import HeaderComponent from '@/components/HeaderComponent';
 import FooterComponent from '@/components/FooterComponent';
-import MainPage from '@/components/MainPage';
-import BlogPage from "@/components/BlogPage";
-import BlogDetailsPage from "@/components/BlogDetailsPage";
-import ProjectPage from "@/components/ProjectPage";
-import ProjectDetailsPage from "@/components/ProjectDetailsPage";
+// import MainPage from '@/pages/MainPage';
+// import BlogPage from "@/pages/BlogPage";
+// import BlogDetailsPage from "@/pages/BlogDetailsPage";
+// import ProjectPage from "@/pages/ProjectPage";
+// import ProjectDetailsPage from "@/pages/ProjectDetailsPage";
 
 export default {
   name: 'App',
@@ -41,24 +45,17 @@ export default {
   components: {
     HeaderComponent,
     FooterComponent,
-    MainPage,
-    BlogPage,
-    BlogDetailsPage,
-    ProjectPage,
-    ProjectDetailsPage,
+    // MainPage,
+    // BlogPage,
+    // BlogDetailsPage,
+    // ProjectPage,
+    // ProjectDetailsPage,
 
-  }
+  },
 
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
